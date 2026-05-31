@@ -12,15 +12,24 @@ pipeline {
 
      }
     }
-    stage('Compile') {
-      steps {
-        sh 'javac hello.java'
-      }
-    }
-    stage('Run') {
-      steps {
-        sh 'java hello'
-      }
-    }
+   stage('Compile') {
+
+ steps {
+
+   sh 'javac multi-stage-multi-agent/hello.java'
+
+ }
+
+}
+
+stage('Run') {
+
+ steps {
+
+   sh 'java -cp multi-stage-multi-agent hello'
+
+ }
+
+}
   }
 }
